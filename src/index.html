@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A website to carve out my own slice of the internet">
+  <meta name="keywords" content="programming, functional, blog, education, teacher, ics3u, ics4u">
+  <meta name="author" content="Philip Habib">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>philiph</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script src="/scripts/main.js" async></script>
+</head>
+
+<body>
+  <a id="go-top" href="#">Go to top</a></div>
+  <header>
+    <button id="dark-mode" onclick="toggleDarkMode()">go dark</button>
+    <nav>
+      <a class="active" href="/">index</a>
+      <a href="/projects">projects</a>
+      <a href="/writing">writing</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>philiph.dev</h1>
+    <p>
+      A computer science educator and software developer specializing in functional programming and web technologies. I
+      create modern tools using languages like Elm, OCaml, and Go, and bring these concepts into the classroom to help
+      students build a deep, transferable understanding of programming.
+    </p>
+  </main>
+
+  <section>
+    <h2>I'm currently...</h2>
+    <div class="currently">
+
+      <div class="fade-in fade-first">
+        <h3>Developing</h3>
+        <p>
+          A web app that allows students to program in python, with syntax highlighting and all, that also tracks the
+          history of key strokes. I call it <span>TBD</span>.
+        </p>
+      </div>
+      <div class="fade-in fade-second">
+        <h3>Writing</h3>
+        <p>A blog post entitled <span>ICS4U: AI is here. What now?</span> where I am writing down my thoughts on the
+          future of CS education at the high school level.</p>
+      </div>
+      <div class="fade-in fade-third">
+        <h3>Reading</h3>
+        <p>
+          <a href="https://www.brandonsanderson.com/pages/the-stormlight-archive-series">
+            Brandon Sanderson's The Way of
+            Kings
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentColorPreference = window.localStorage.getItem("theme");
+    if (currentColorPreference === null) {
+      currentColorPreference = document.documentElement.getAttribute("data-theme")
+        ? "dark"
+        : "light";
+
+    }
+    if (currentColorPreference === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+
+      document.documentElement.removeAttribute("data-theme");
+    }
+    let buttonCta = currentColorPreference === "light"
+      ? "go dark"
+      : "go light";
+    document.getElementById("dark-mode").textContent = buttonCta;
+  </script>
+
+
+</body>
+
+</html>

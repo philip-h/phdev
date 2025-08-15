@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A website to carve out my own slice of the internet">
+  <meta name="keywords" content="programming, functional, blog, education, teacher, ics3u, ics4u">
+  <meta name="author" content="Philip Habib">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>$title$ - phdev</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script src="/scripts/main.js" async></script>
+</head>
+
+<body>
+  <a id="go-top" href="#">Go to top</a></div>
+  <header>
+    <button id="dark-mode" onclick="toggleDarkMode()">go dark</button>
+    <nav>
+      <a href="/">index</a>
+      <a href="/projects">projects</a>
+      <a class="active" href="/writing">writing</a>
+    </nav>
+  </header>
+
+  <article>
+    <h1>$title$</h1>
+    <p>$date$
+    <p>
+      $body$
+  </article>
+
+  <script>
+    let currentColorPreference = window.localStorage.getItem("theme");
+    if (currentColorPreference === null) {
+      currentColorPreference = document.documentElement.getAttribute("data-theme")
+        ? "dark"
+        : "light";
+
+    }
+    if (currentColorPreference === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+
+      document.documentElement.removeAttribute("data-theme");
+    }
+    let buttonCta = currentColorPreference === "light"
+      ? "go dark"
+      : "go light";
+    document.getElementById("dark-mode").textContent = buttonCta;
+  </script>
+
+</body>
+
+</html>

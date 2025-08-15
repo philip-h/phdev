@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A website to carve out my own slice of the internet">
+  <meta name="keywords" content="programming, functional, blog, education, teacher, ics3u, ics4u">
+  <meta name="author" content="Philip Habib">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>writing - phdev</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script src="/scripts/main.js" async></script>
+</head>
+
+<body>
+  <a id="go-top" href="#">Go to top</a></div>
+  <header>
+    <button id="dark-mode" onclick="toggleDarkMode()">go dark</button>
+    <nav>
+      <a href="/">index</a>
+      <a href="/projects">projects</a>
+      <a class="active" href="/writing">writing</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Writing</h2>
+    <p>
+      One of three possibilities:
+    <ul>
+      <li>A log of what I'm currently learning or building</li>
+      <li>Thoughts on AI/tech as it relates to education</li>
+      <li>A log of ideas for my high-school courses</li>
+      </p>
+  </main>
+  <section>
+    <div class="min-card">
+      <h3><a href="best-lang-for-hs/">Best first language for high school students</a></h3>
+      <p>AUGUST 2025</p>
+      <p>
+        Almost every high school teacher I speak to teaches either <a
+          href="https://en.wikipedia.org/wiki/Python_(programming_language)">python</a> or <a
+          href="https://en.wikipedia.org/wiki/Java_(programming_language)">java</a> to their students. I argue that the
+        reasons for choosing these languages actually lead to different language choices - perhaps languages many are
+        unfomfortable with...
+
+      </p>
+      <p>Topics:
+      <ul>
+        <li>Programming</li>
+        <li>Education</li>
+      </ul>
+      <p>
+    </div>
+  </section>
+
+  <script>
+    let currentColorPreference = window.localStorage.getItem("theme");
+    if (currentColorPreference === null) {
+      currentColorPreference = document.documentElement.getAttribute("data-theme")
+        ? "dark"
+        : "light";
+
+    }
+    if (currentColorPreference === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+
+      document.documentElement.removeAttribute("data-theme");
+    }
+    let buttonCta = currentColorPreference === "light"
+      ? "go dark"
+      : "go light";
+    document.getElementById("dark-mode").textContent = buttonCta;
+  </script>
+
+</body>
+
+</html>
