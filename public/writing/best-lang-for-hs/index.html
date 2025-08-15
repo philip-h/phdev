@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A website to carve out my own slice of the internet">
+  <meta name="keywords" content="programming, functional, blog, education, teacher, ics3u, ics4u">
+  <meta name="author" content="Philip Habib">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Best first language for high school students - phdev</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script src="/scripts/main.js" async></script>
+</head>
+
+<body>
+  <a id="go-top" href="#">Go to top</a></div>
+  <header>
+    <button id="dark-mode" onclick="toggleDarkMode()">go dark</button>
+    <nav>
+      <a href="/">index</a>
+      <a href="/projects">projects</a>
+      <a class="active" href="/writing">writing</a>
+    </nav>
+  </header>
+
+  <article>
+    <h1>Best first language for high school students</h1>
+    <p>AUGUST 2025
+    <p>
+      <p>Every high school CS teacher I’ve met seems to pick one of two
+      camps for Grade 11 and 12: <strong>Python</strong> or
+      <strong>Java</strong>. (Okay, <em>maybe</em> C# if the computer
+      lab can run VisualStudio 😅)</p>
+      <p>The reasoning is often the same:<br />
+      - <em>Python</em> is “high-level” and “reads like English.”<br />
+      - <em>Java</em> is “close to C” and forces students to think about
+      data types, memory, and object-oriented programming.</p>
+      <p>But here’s the thing: if we’re chasing <em>those</em> ideals,
+      why choose these languages?</p>
+      <p>If you love Python because it’s expressive and minimal, Haskell
+      is the <em>real</em> mvp.</p>
+      <p>Let’s take factorial for a moment (“N factorial” is the product
+      of all numbers between 1 and N inclusive). In python, unless we
+      <code>import prod from math</code> we have to hand-roll our own
+      raw for loop, which would look something like this:</p>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Calculate n!, that is, n*(n-1)*...*2*1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; factorial(5)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    120</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; factorial(10)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    362880</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    fact <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        fact <span class="op">*=</span> i</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fact</span></code></pre></div>
+      <p>In a language like Haskell, that I believe is a higher-level
+      language than python, we would write the following</p>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">{- | Calculate n!, that is, n*(n-1)*...*2*1</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">&gt;&gt;&gt; factorial 5</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">120</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">&gt;&gt;&gt; factorial 10</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">362880</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">-}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ot">factorial ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>factorial n <span class="ot">=</span> <span class="fu">product</span> [<span class="dv">1</span><span class="op">..</span>n]</span></code></pre></div>
+      <p>That, I say, is essentially the dictionary definition of
+      factorial. So, which one reads <em>more like English</em>?</p>
+      <p>On the flip side, if you’re in Camp Java because it “teaches
+      fundamentals” and has C-style syntax, then why not… teach C? It’s
+      a much smaller language, and it’ll make students think hard about
+      memory, types, and foundational data structures. Then, when you
+      actually need classes, virtual methods, or polymorphism you bring
+      in C++ (perhaps with a small library to make functions that take
+      iterators behave a little more like python).</p>
+      <p>Instead, we’ve picked the middle of the road for both
+      philosophies. Python’s not the most high-level; Java’s not the
+      leanest low-level. If our goal is to teach fundamentals and mental
+      models, maybe we should be braver about the languages we choose to
+      teach.</p>
+      <p>All of this being said, I, too, teach <em>python</em> in grade
+      11 and <em>java</em> in grade 12, but I wonder what the outcome
+      would be if I taught a mix of FP and C!</p>
+  </article>
+
+  <script>
+    let currentColorPreference = window.localStorage.getItem("theme");
+    if (currentColorPreference === null) {
+      currentColorPreference = document.documentElement.getAttribute("data-theme")
+        ? "dark"
+        : "light";
+
+    }
+    if (currentColorPreference === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+
+      document.documentElement.removeAttribute("data-theme");
+    }
+    let buttonCta = currentColorPreference === "light"
+      ? "go dark"
+      : "go light";
+    document.getElementById("dark-mode").textContent = buttonCta;
+  </script>
+
+</body>
+
+</html>
